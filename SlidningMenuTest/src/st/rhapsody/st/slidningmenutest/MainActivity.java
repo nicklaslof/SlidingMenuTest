@@ -1,5 +1,7 @@
 package st.rhapsody.st.slidningmenutest;
 
+import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -10,6 +12,18 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        
+        SlidingMenu menu;
+        menu = new SlidingMenu(this);
+        menu.setMode(SlidingMenu.LEFT);
+        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+        menu.setShadowWidth(5);
+        menu.setFadeDegree(0.0f);
+        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+        menu.setBehindWidth(200);
+        menu.setMenu(R.layout.menu_frame);
+        
     }
 
 
